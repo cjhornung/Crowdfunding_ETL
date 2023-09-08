@@ -17,3 +17,28 @@ CREATE TABLE category_tbl (
 	category VARCHAR(30) NOT NULL,
 	PRIMARY KEY (category_id)
 );
+
+-- category_tbl table creation
+DROP TABLE campaign_tbl;
+
+CREATE TABLE campaign_tbl (
+	cf_id INT NOT NULL,
+	contact_id INT NOT NULL,
+    company_name VARCHAR(50) NOT NULL,
+	description VARCHAR(70) NOT NULL,
+    goal FLOAT NOT NULL,
+	pledged FLOAT NOT NULL,
+    outcome VARCHAR(30) NOT NULL,
+	backers_count INT NOT NULL,
+    country VARCHAR(30) NOT NULL,
+    currency VARCHAR(30) NOT NULL,
+	launched_date VARCHAR(30) NOT NULL,
+    end_date VARCHAR(30) NOT NULL,
+	staff_pick VARCHAR(30) NOT NULL,
+    spotlight VARCHAR(30) NOT NULL,
+	category_id VARCHAR(30) NOT NULL,
+    subcategory_id VARCHAR(30) NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES category_tbl(category_id),
+    FOREIGN KEY (subcategory_id) REFERENCES subcategory_tbl(subcategory_id),
+	PRIMARY KEY (cf_id)
+);
