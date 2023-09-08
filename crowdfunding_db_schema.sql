@@ -18,6 +18,17 @@ CREATE TABLE category_tbl (
 	PRIMARY KEY (category_id)
 );
 
+-- contacts_tbl table creation
+DROP TABLE contacts_tbl;
+
+CREATE TABLE contacts_tbl (
+	contact_id INT NOT NULL,
+	first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+	email VARCHAR(30) NOT NULL,
+	PRIMARY KEY (contact_id)
+);
+
 -- category_tbl table creation
 DROP TABLE campaign_tbl;
 
@@ -38,6 +49,7 @@ CREATE TABLE campaign_tbl (
     spotlight VARCHAR(30) NOT NULL,
 	category_id VARCHAR(30) NOT NULL,
     subcategory_id VARCHAR(30) NOT NULL,
+    FOREIGN KEY (contact_id) REFERENCES contacts_tbl(contact_id),   
     FOREIGN KEY (category_id) REFERENCES category_tbl(category_id),
     FOREIGN KEY (subcategory_id) REFERENCES subcategory_tbl(subcategory_id),
 	PRIMARY KEY (cf_id)
