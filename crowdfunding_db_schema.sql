@@ -25,7 +25,7 @@ CREATE TABLE contacts_tbl (
 	contact_id INT NOT NULL,
 	first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
-	email VARCHAR(30) NOT NULL,
+	email VARCHAR(60) NOT NULL,
 	PRIMARY KEY (contact_id)
 );
 
